@@ -1,1 +1,1 @@
-"# vue-supabase-boilerplate" 
+# Vue Boilerplate

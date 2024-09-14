@@ -1,0 +1,32 @@
+<script setup lang="ts">
+import { ArrowLeft } from "@element-plus/icons-vue";
+import router from "@/router";
+import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
+</script>
+
+<template>
+    <header class="header">
+        <div class="app-name">Boilerplate✨</div>
+
+        <el-text>Made with ❤️ by Florian M.</el-text>
+    </header>
+    <router-view />
+    <VueQueryDevtools />
+</template>
+
+<style scoped>
+
+.header {
+    height: 4vh;
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-name {
+    font-weight: bold;
+}
+</style>
