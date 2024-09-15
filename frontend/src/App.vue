@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ArrowLeft } from "@element-plus/icons-vue";
-import router from "@/router";
 import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
 </script>
 
@@ -12,6 +10,7 @@ import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
     </header>
     <router-view />
     <VueQueryDevtools />
+    <Toaster />
 </template>
 
 <style scoped>
