@@ -17,7 +17,7 @@
             "@/*": ["./src/*"]
         },
         "resolveJsonModule": true,
-        "types": ["vite/client", "node"],
+        "types": ["vite/client", "node", "unplugin-vue-router/client"],
         "allowJs": true,
         "strictNullChecks": true,
         "noUnusedLocals": true,
