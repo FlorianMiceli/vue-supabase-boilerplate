@@ -3,7 +3,7 @@ Connection to backend server using axios
 */
 
 import axios from 'axios'
-import { useDisplayStore } from './stores/display'
+import { error as displayError } from '@/helpers/display'
 
 const baseURL = process.env.NODE_ENV === 'production' ? 'https://your-production-frontend-url.com' : 'http://localhost:8080/' //TODO replace by production url
 
@@ -12,7 +12,6 @@ let backend = axios.create({
 })
 
 async function apiCall (method: string, url: string, data?: any, params?: any) {
-    const displayStore = useDisplayStore()
     return await backend
         .request({ method, url, data, params })
         .then((response: any) => {
@@ -28,7 +27,7 @@ async function apiCall (method: string, url: string, data?: any, params?: any) {
             else if(error?.statusText){error_message = error?.statusText}
             else if(error?.message){error_message = error?.message}
             else{error_message = 'Unknown error'}
-            if(error_message !== 'Network Error') displayStore.error('Error', error_message)
+            if(error_message !== 'Network Error') displayError('Error', error_message)
             console.error(error_message)
             console.error(error)
             return { 
